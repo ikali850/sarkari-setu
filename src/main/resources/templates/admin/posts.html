@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Posts | Admin</title></head>
+<body>
+<main>
+  <div class="bar" style="margin-top:0"><h1 style="margin:0">Posts</h1><a title="Start writing a new post" class="btn p" th:href="@{/admin/posts/new}" style="margin-left:auto">+ New post</a></div>
+  <div class="chips">
+    <a class="chip" title="Show posts of every status"  th:classappend="${#strings.isEmpty(fStatus)} ? 'on'" th:href="@{/admin/posts(section=${fSection}, q=${fq})}" th:text="'All (' + ${nAll} + ')'">All</a>
+    <a title="Show only posts that are live on the site" class="chip" th:classappend="${fStatus == 'PUBLISHED'} ? 'on'" th:href="@{/admin/posts(status='PUBLISHED', section=${fSection}, q=${fq})}" th:text="'Published (' + ${nPub} + ')'">Published</a>
+    <a class="chip" title="Show only drafts (not visible on the site)"  th:classappend="${fStatus == 'DRAFT'} ? 'on'" th:href="@{/admin/posts(status='DRAFT', section=${fSection}, q=${fq})}" th:text="'Draft (' + ${nDra} + ')'">Draft</a>
+    <a title="Show posts that were taken down" class="chip" th:classappend="${fStatus == 'UNPUBLISHED'} ? 'on'" th:href="@{/admin/posts(status='UNPUBLISHED', section=${fSection}, q=${fq})}" th:text="'Unpublished (' + ${nUnp} + ')'">Unpublished</a>
+  </div>
+  <form method="get" th:action="@{/admin/posts}" class="fg">
+    <input type="hidden" name="status" th:value="${fStatus}">
+    <label>Search<input name="q" th:value="${fq}" placeholder="Search title…"></label>
+    <label>Section
+      <select name="section" onchange="this.form.submit()">
+        <option value="">All sections</option>
+        <option th:each="s : ${adminSections}" th:value="${s.slug}" th:text="${s.name}" th:selected="${s.slug == fSection}">Section</option>
+      </select></label>
+  </form>
+  <div class="card"><div class="scroll"><table>
+    <tr><th>Title</th><th>Section</th><th>Status</th><th>Updated</th><th>By</th><th></th></tr>
+    <tr th:each="p : ${list}">
+      <td><b th:text="${p.title}">Title</b></td>
+      <td th:text="${p.section != null} ? ${p.section.name} : '-'">Section</td>
+      <td><span class="pill" style="margin:0" th:classappend="${p.status.name() == 'PUBLISHED'} ? 'ok' : (${p.status.name() == 'DRAFT'} ? 'mu' : 'inf')" th:text="${p.status}">Status</span></td>
+      <td th:text="${p.updatedText}">date</td>
+      <td th:text="${p.author != null} ? ${p.author.name} : '-'">By</td>
+      <td style="white-space:nowrap">
+        <a title="Open this in the editor" class="btn" th:href="@{/admin/posts/{i}/edit(i=${p.id})}">Edit</a>
+        <a title="See how it will look on the site (opens in a new tab)" class="btn" th:href="@{/admin/posts/{i}/preview(i=${p.id})}" target="_blank">Preview</a>
+        <form class="inline" th:action="@{/admin/posts/{i}/duplicate(i=${p.id})}" method="post"><button class="btn" type="submit" title="Make a draft copy of this post (for the next year or a similar notification)">Duplicate</button></form>
+        <form class="inline" th:if="${p.status.name() == 'PUBLISHED'}" th:action="@{/admin/posts/{i}/unpublish(i=${p.id})}" method="post"><button title="Hide this post from the site. You can publish it again later" class="btn" type="submit">Unpublish</button></form>
+        <form class="inline" th:if="${p.status.name() != 'PUBLISHED'}" th:action="@{/admin/posts/{i}/publish(i=${p.id})}" method="post"><button title="Make the post live. Needs all 5 verification checks ticked in the editor" class="btn" type="submit">Publish</button></form>
+        <form class="inline" th:if="${isSa}" th:action="@{/admin/posts/{i}/delete(i=${p.id})}" method="post" data-confirm="Delete this post for good?"><button title="Delete for good. This cannot be undone" class="btn danger" type="submit">Delete</button></form>
+      </td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(list)}"><td colspan="6">No posts match.</td></tr>
+  </table></div></div>
+  <div th:replace="~{fragments/parts :: pager(${pageInfo}, ${pagerBase})}"></div>
+</main>
+</body>
+</html>

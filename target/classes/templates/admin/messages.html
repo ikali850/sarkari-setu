@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Messages | Admin</title></head>
+<body>
+<main>
+  <h1>Messages</h1><p class="sub">From the Contact Us form.</p>
+  <p class="sub" th:if="${#lists.isEmpty(list)}">No messages yet.</p>
+  <div class="card" th:each="c : ${list}">
+    <div class="bar" style="margin-top:0">
+      <b th:text="${c.name}">Name</b><a title="Reply by email" th:href="'mailto:' + ${c.email}" th:text="${c.email}">email</a>
+      <span class="meta" th:text="${c.createdText}"></span>
+      <span class="pill" th:classappend="${c.handled} ? 'ok' : 'errc'" th:text="${c.handled} ? 'Handled' : 'New'">New</span>
+      <form class="inline" style="margin-left:auto" th:action="@{/admin/messages/{i}/handled(i=${c.id})}" method="post"><button title="Mark this message as handled (or new again)" class="btn" type="submit" th:text="${c.handled} ? 'Mark as new' : 'Mark handled'">Mark</button></form>
+    </div>
+    <p th:if="${!#strings.isEmpty(c.subject)}"><b th:text="${c.subject}"></b></p>
+    <p style="white-space:pre-wrap" th:text="${c.message}">Message</p>
+  </div>
+</main>
+</body>
+</html>

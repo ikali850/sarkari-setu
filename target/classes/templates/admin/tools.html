@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Tools | Admin</title></head>
+<body>
+<main>
+  <h1>Tools</h1>
+  <p class="sub">Free tools shown on the site (/tools). Turn tools on or off, rename them and change their order.</p>
+  <form class="card" style="margin-top:12px" th:each="t : ${list}" th:action="@{/admin/tools/save}" method="post">
+    <input type="hidden" name="id" th:value="${t.id}">
+    <div class="fg">
+      <label>Name<input name="name" th:value="${t.name}"></label>
+      <label>Description<input name="description" th:value="${t.description}"></label>
+      <label>Order<input type="number" name="sortOrder" th:value="${t.sortOrder}"></label>
+    </div>
+    <div class="bar">
+      <label class="chk"><input type="checkbox" name="enabled" value="true" th:checked="${t.enabled}">Visible on the site</label>
+      <button title="Save the changes on this row" class="btn p" type="submit">Save</button>
+      <a title="Open this tool on the site" th:href="@{/tools/{x}(x=${t.slug})}" target="_blank" th:text="'/tools/' + ${t.slug}">link</a>
+    </div>
+  </form>
+</main>
+</body>
+</html>

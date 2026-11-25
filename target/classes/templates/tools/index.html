@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'Free Tools | ' + ${site.name}">Tools</title></head>
+<body>
+<main class="wrap">
+  <h1>Free Tools</h1>
+  <p class="sub">Useful calculators for form filling and exam preparation. Everything runs in your browser.</p>
+  <div class="grid">
+    <a class="tile" th:each="t : ${tools}" th:href="@{/tools/{x}(x=${t.slug})}"><span><span th:text="${t.name}">Tool</span><small th:text="${t.description}"></small></span></a>
+  </div>
+</main>
+</body>
+</html>

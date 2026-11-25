@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Dashboard | Admin</title></head>
+<body>
+<main>
+  <h1 th:text="'Welcome, ' + ${me.name}">Welcome</h1>
+  <p class="sub" th:text="${me.roleLabel} + ' account'">Role</p>
+  <div class="stats">
+    <div><b th:text="${nPublished}">0</b><span>Published</span></div>
+    <div><b th:text="${nDraft}">0</b><span>Drafts</span></div>
+    <div><b th:text="${nUnpublished}">0</b><span>Unpublished</span></div>
+    <div><b th:text="${unread}">0</b><span>Unread messages</span></div>
+    <div th:if="${isSa}"><b th:text="${nSubs}">0</b><span>Subscribers</span></div>
+  </div>
+  <div class="bar"><a title="Start writing a new post" class="btn p" th:href="@{/admin/posts/new}">+ New post</a><a title="See, search and filter every post" class="btn" th:href="@{/admin/posts}">All posts</a></div>
+  <div class="grid">
+    <section class="card"><h2>Most viewed</h2>
+      <div class="st" th:each="p : ${top}"><a title="Open this post in the editor" th:href="@{/admin/posts/{i}/edit(i=${p.id})}" th:text="${p.title}">Title</a><span class="meta" th:text="${p.views} + ' views'">0</span></div>
+    </section>
+    <section class="card"><h2>Closing in 7 days</h2>
+      <p class="sub" th:if="${#lists.isEmpty(closing)}">No post is closing this week.</p>
+      <div class="st" th:each="p : ${closing}"><a title="Open this post in the editor" th:href="@{/admin/posts/{i}/edit(i=${p.id})}" th:text="${p.title}">Title</a><span class="pill mu" style="margin:0" th:text="${p.daysLeftText}">3 days left</span></div>
+    </section>
+    <section class="card"><h2>Published posts per section</h2>
+      <div class="brow" th:each="b : ${bars}"><span class="l" th:text="${b.label}">Section</span><span class="t"><div class="b" th:style="'width:' + ${b.percent} + '%'"></div></span><span class="n" th:text="${b.count}">0</span></div>
+    </section>
+  </div>
+  <section class="card">
+    <h2>Drafts and unpublished posts</h2>
+    <p class="sub" th:if="${#lists.isEmpty(drafts)}">Nothing waiting. Good job.</p>
+    <div class="scroll" th:if="${!#lists.isEmpty(drafts)}"><table>
+      <tr th:each="p : ${drafts}">
+        <td><b th:text="${p.title}">Title</b></td>
+        <td><span class="pill" th:classappend="${p.status.name() == 'DRAFT'} ? 'mu' : 'inf'" th:text="${p.status}">Status</span></td>
+        <td class="meta" th:text="${p.updatedText}"></td>
+        <td><a title="Open this in the editor" class="btn" th:href="@{/admin/posts/{i}/edit(i=${p.id})}">Edit</a></td>
+      </tr>
+    </table></div>
+  </section>
+  <section class="card" th:if="${isSa}">
+    <h2>Recent activity</h2>
+    <div class="scroll"><table>
+      <tr th:each="a : ${activity}"><td th:text="${a.who}"></td><td th:text="${a.action}"></td><td class="meta" th:text="${a.happenedText}"></td></tr>
+    </table></div>
+  </section>
+</main>
+</body>
+</html>

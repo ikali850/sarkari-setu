@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Media | Admin</title></head>
+<body>
+<main>
+  <h1>Media</h1>
+  <p class="sub">Upload an image (png, jpg, gif or webp, up to 5 MB), copy its address, and use it in a post with the Image button.</p>
+  <form class="card" style="margin-top:0" th:action="@{/admin/media/upload}" method="post" enctype="multipart/form-data">
+    <label>Choose an image<input type="file" name="file" accept="image/png,image/jpeg,image/gif,image/webp" required></label>
+    <div class="bar"><button class="btn p" type="submit" title="Upload the image and get its address">Upload</button></div>
+  </form>
+  <p class="sub" style="margin-top:16px" th:if="${#lists.isEmpty(files)}">No images yet.</p>
+  <div class="mgrid" style="margin-top:16px">
+    <div class="card" th:each="f : ${files}">
+      <img th:src="${f[1]}" alt="">
+      <code th:text="${f[1]}">/uploads/x.png</code>
+      <button class="btn" type="button" data-copy th:attr="data-copy-text=${f[1]}" title="Copy this image address">Copy address</button>
+      <form class="inline" th:if="${isSa}" th:action="@{/admin/media/delete}" method="post" data-confirm="Delete this image? Posts using it will show a broken image.">
+        <input type="hidden" name="name" th:value="${f[0]}"><button class="btn danger" type="submit" title="Delete this image for good (Super Admin only)">Delete</button></form>
+    </div>
+  </div>
+</main>
+</body>
+</html>

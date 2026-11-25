@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${tool.name} + ' | ' + ${site.name}">Percentage Calculator</title></head>
+<body>
+<main class="wrap"><div class="toolbox">
+  <p class="meta"><a th:href="@{/tools}">All tools</a></p>
+  <h1 th:text="${tool.name}">Percentage Calculator</h1>
+  <div class="card">
+    <h2>Marks to percentage</h2>
+    <div class="fg"><label>Marks obtained<input type="number" id="obt" min="0" step="any"></label><label>Total marks<input type="number" id="tot" min="0" step="any"></label></div>
+    <div class="bar"><button class="btn p" id="go1" type="button">Calculate</button></div>
+    <div class="big" id="out1" style="margin-top:10px" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <h2>CGPA to percentage</h2>
+    <div class="fg"><label>CGPA<input type="number" id="cgpa" min="0" step="any"></label><label>Multiplier (your university rule)<input type="number" id="factor" value="9.5" step="any"></label></div>
+    <div class="bar"><button class="btn p" id="go2" type="button">Convert</button></div>
+    <div class="big" id="out2" style="margin-top:10px" aria-live="polite"></div>
+    <p class="hint">9.5 is common but not universal. Use the multiplier your university or the form says.</p>
+  </div>
+</div></main>
+<script th:src="@{/js/tools/percentage-calculator.js}"></script>
+</body>
+</html>

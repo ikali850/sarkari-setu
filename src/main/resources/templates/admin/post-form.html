@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Post editor | Admin</title></head>
+<body>
+<main>
+  <div class="bar" style="margin-top:0">
+    <h1 style="margin:0">Post editor</h1>
+    <span class="pill" th:classappend="${status == 'PUBLISHED'} ? 'ok' : 'mu'" th:text="${status}">NEW</span>
+    <a title="See how it will look on the site (opens in a new tab)" class="btn" th:if="${form.id != null}" th:href="@{/admin/posts/{i}/preview(i=${form.id})}" target="_blank" style="margin-left:auto">Preview</a>
+  </div>
+  <p class="sub">No fixed layout: fill only what this notification has. Verify everything against the official notice before publishing.</p>
+
+  <form th:action="@{/admin/posts/save}" th:object="${form}" method="post">
+    <input type="hidden" th:field="*{id}">
+
+    <section class="card" style="margin-top:0"><h2>1. Basics</h2>
+      <div class="fg">
+        <label>Title<input th:field="*{title}" required></label>
+        <label>Slug (auto if empty)<input th:field="*{slug}" placeholder="up-police-si-2026"></label>
+        <label>Section
+          <select th:field="*{sectionId}"><option value="">Choose a section</option>
+            <option th:each="s : ${allSections}" th:value="${s.id}" th:text="${s.name}">Section</option></select></label>
+        <label>Filter tags (comma separated)<input th:field="*{tags}" placeholder="Graduate, Police, UP"></label>
+        <label>Organisation<input th:field="*{organisation}"></label>
+        <label>Total posts<input th:field="*{totalPosts}" placeholder="2,606"></label>
+        <label>Last date<input type="date" th:field="*{lastDate}"></label>
+      </div>
+      <label style="margin-top:12px">Short summary (search results and sharing, max 500)<textarea th:field="*{summary}" rows="2" maxlength="500" style="font-family:inherit;font-size:14px"></textarea></label>
+    </section>
+
+    <section class="card"><h2>2. Application fee by category</h2>
+      <label>One line per category: Category | Amount | Note<textarea th:field="*{feesText}" rows="4" placeholder="General / OBC / EWS | 400 | Online payment&#10;SC / ST | 200&#10;Female (all categories) | 100"></textarea></label>
+    </section>
+
+    <section class="card"><h2>3. Extra details (any label, any value)</h2>
+      <label>One line each: Label | Value<textarea th:field="*{extraText}" rows="3" placeholder="Mode of exam | Offline, OMR sheet&#10;Exam centres | All districts of UP"></textarea></label>
+    </section>
+
+    <section class="card"><h2>4. Posts and vacancy (paste from Excel)</h2>
+      <label>Post | UR | OBC | SC | ST | EWS (tab, comma or | between columns; total is automatic)<textarea th:field="*{vacancyText}" rows="4" placeholder="Sub-Inspector (Civil Police) | 1100 | 594 | 396 | 40 | 220"></textarea></label>
+    </section>
+
+    <section class="card"><h2>5. Stages</h2>
+      <label>Stage | Applies to | Date or text | Status (Done, Live or Upcoming) | Link<textarea th:field="*{stagesText}" rows="5" placeholder="Admit card | Sub-Inspector (Civil Police) | 20 Nov 2026 | Live | https://...&#10;Admit card | Platoon Commander | Not yet | Upcoming"></textarea></label>
+      <p class="hint">Use "All posts" in the second column when a stage is for every post. A stage can apply to one post only, so admit cards that come at different times are easy to show.</p>
+    </section>
+
+    <section class="card"><h2>6. Your write-up (HTML allowed)</h2>
+      <div class="tb" style="margin-bottom:8px">
+        <button type="button" class="btn" data-ins="h2" title="Heading: wraps the selected text in a heading">H2</button>
+        <button type="button" class="btn" data-ins="b" title="Bold: wraps the selected text in bold">Bold</button>
+        <button type="button" class="btn" data-ins="ul" title="Bullet list">List</button>
+        <button type="button" class="btn" data-ins="a" title="Link: type the address inside the quotes">Link</button>
+        <button type="button" class="btn" data-ins="img" title="Image: first upload it in Media, then paste its /uploads/... address">Image</button>
+        <button type="button" class="btn" data-ins="table" title="Table with a header row">Table</button>
+        <button type="button" class="btn" data-ins="note" title="A short highlighted note">Note</button>
+      </div>
+      <label>Selection process, syllabus, notes<textarea id="body" th:field="*{body}" rows="10" style="font-family:inherit;font-size:14px"></textarea></label>
+    </section>
+
+    <section class="card"><h2>7. Manual verification</h2>
+      <label class="chk"><input type="checkbox" class="vf" th:field="*{check1}">Matched with the official notification PDF</label>
+      <label class="chk"><input type="checkbox" class="vf" th:field="*{check2}">Dates double-checked</label>
+      <label class="chk"><input type="checkbox" class="vf" th:field="*{check3}">Fee amounts checked category by category</label>
+      <label class="chk"><input type="checkbox" class="vf" th:field="*{check4}">Links open the official site</label>
+      <label class="chk"><input type="checkbox" class="vf" th:field="*{check5}">Preview checked on mobile and desktop</label>
+      <p class="hint" id="vnote">Tick all checks to enable Publish.</p>
+    </section>
+
+    <div class="bar">
+      <button title="Save your work without showing it on the site" class="btn" type="submit" name="action" value="draft" th:text="${status == 'PUBLISHED'} ? 'Save changes' : 'Save draft'">Save draft</button>
+      <button title="Make the post live. Needs all 5 verification checks ticked in the editor" class="btn p" type="submit" name="action" value="publish" id="pub" disabled th:text="${status == 'PUBLISHED'} ? 'Save and keep published' : 'Publish'">Publish</button>
+    </div>
+  </form>
+  <form th:if="${status == 'PUBLISHED'}" th:action="@{/admin/posts/{i}/unpublish(i=${form.id})}" method="post" class="bar"><button title="Hide this post from the site. You can publish it again later" class="btn danger" type="submit">Unpublish</button></form>
+</main>
+</body>
+</html>

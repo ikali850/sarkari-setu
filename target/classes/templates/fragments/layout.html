@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content, desc)">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <title th:replace="${title}">Title</title>
+  <meta name="description" th:content="${desc != null and !#strings.isEmpty(desc)} ? ${desc} : ${site.tagline}">
+  <meta name="theme-color" th:content="${site.themeColor}">
+  <meta name="robots" content="noindex, follow" th:if="${noindex != null}">
+  <link rel="canonical" th:href="${canonical}">
+  <link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}">
+  <link rel="alternate" type="application/rss+xml" th:title="${site.name}" th:href="@{/feed.xml}">
+  <meta property="og:site_name" th:content="${site.name}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" th:content="${ogTitle} ?: ${site.name}">
+  <meta property="og:description" th:content="${desc != null and !#strings.isEmpty(desc)} ? ${desc} : ${site.tagline}">
+  <meta property="og:url" th:content="${canonical}">
+  <meta property="og:image" th:if="${!#strings.isEmpty(site.ogImage)}" th:content="${site.ogImage}">
+  <meta name="twitter:card" th:content="${#strings.isEmpty(site.ogImage)} ? 'summary' : 'summary_large_image'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <th:block th:if="${site.analyticsId != null and !#strings.isEmpty(site.analyticsId)}">
+    <script async th:src="'https://www.googletagmanager.com/gtag/js?id=' + ${site.analyticsId}"></script>
+    <script th:inline="javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',/*[[${site.analyticsId}]]*/ '');</script>
+  </th:block>
+</head>
+<body class="public">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top"><div class="wrap">
+    <a class="logo" th:href="@{/}" th:text="${site.name}">Site</a>
+    <nav class="nav" aria-label="Main">
+      <a th:href="@{/}" data-nav>Home</a>
+      <a th:each="s : ${tabSections}" th:href="@{/s/{x}(x=${s.slug})}" th:text="${s.name}" data-nav>Section</a>
+      <a th:href="@{/more}" data-nav>More</a>
+      <a th:href="@{/mock-tests}" data-nav>Mock Tests</a>
+      <a th:href="@{/tools}" data-nav>Tools</a>
+      <a th:href="@{/saved}" data-nav>Saved</a>
+    </nav>
+    <div class="sbox">
+      <form class="search" th:action="@{/search}" method="get" role="search">
+        <input id="hq" name="q" type="search" placeholder="Search recruitment…" aria-label="Search recruitment" autocomplete="off">
+      </form>
+      <div class="sugg" id="sugg" hidden></div>
+    </div>
+    <button class="iconbtn" id="theme" type="button" aria-label="Switch light or dark mode" title="Switch light or dark mode">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+    </button>
+  </div></header>
+
+  <span id="main" tabindex="-1"></span>
+  <main th:replace="${content}">Content</main>
+
+  <footer class="foot"><div class="wrap">
+    <nav aria-label="Footer">
+      <a th:each="p : ${footerPages}" th:href="@{/p/{x}(x=${p.slug})}" th:text="${p.title}">Page</a>
+      <a th:href="@{/contact}">Contact Us</a>
+      <a th:href="@{/feed.xml}">RSS</a>
+      <a th:if="${!#strings.isEmpty(site.telegramUrl)}" th:href="${site.telegramUrl}" rel="noopener">Telegram</a>
+      <a th:if="${!#strings.isEmpty(site.whatsappUrl)}" th:href="${site.whatsappUrl}" rel="noopener">WhatsApp</a>
+      <a th:if="${!#strings.isEmpty(site.instagramUrl)}" th:href="${site.instagramUrl}" rel="noopener">Instagram</a>
+      <a th:if="${!#strings.isEmpty(site.youtubeUrl)}" th:href="${site.youtubeUrl}" rel="noopener">YouTube</a>
+    </nav>
+    <div th:text="${site.footerNote}"></div>
+    <div>&copy; <span th:text="${#dates.year(#dates.createNow())}">2026</span> <span th:text="${site.name}">Site</span>. Not an official government website.</div>
+  </div></footer>
+
+  <a class="fab" th:if="${!#strings.isEmpty(site.telegramUrl)}" th:href="${site.telegramUrl}" rel="noopener" title="Join our Telegram channel">Join Telegram</a>
+  <button class="totop" id="totop" type="button" hidden aria-label="Back to top" title="Back to top">&uarr;</button>
+  <div class="cookie" id="cookie" hidden th:if="${site.cookieNotice}">
+    <span>We use cookies to improve this site. See our <a th:href="@{/p/privacy-policy}">Privacy Policy</a>.</span>
+    <button class="btn p" id="cookie-ok" type="button">OK</button>
+  </div>
+
+  <nav class="tabbar" aria-label="Tabs">
+    <a th:href="@{/}" data-nav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+    <a th:each="s : ${tabSections}" th:href="@{/s/{x}(x=${s.slug})}" data-nav>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18H5zM9 8h6M9 12h6M9 16h4"/></svg>
+      <span th:text="${s.name}">Section</span></a>
+    <a th:href="@{/more}" data-nav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>More</a>
+  </nav>
+  <script th:src="@{/js/site.js}"></script>
+</body>
+</html>

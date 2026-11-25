@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title th:replace="${title}">Admin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <b class="brand" th:text="${site.name}">Site</b><small>Admin panel</small>
+    <nav aria-label="Admin">
+      <a title="Overview: counts, drafts waiting and recent activity" th:href="@{/admin}" data-nav data-exact>Dashboard</a>
+      <a title="See, search and filter every post" th:href="@{/admin/posts}" data-nav data-exact>All posts</a>
+      <a title="Start writing a new post" th:href="@{/admin/posts/new}" data-nav>+ New post</a>
+      <div class="gl">Sections</div>
+      <a title="Show only the posts of this section. The number is how many posts it has" th:each="s : ${adminSections}" th:href="@{/admin/posts(section=${s.slug})}"><span th:text="${s.name}">Section</span><span class="n" th:text="${counts[s.slug]}">0</span></a>
+      <div class="gl">Content</div>
+      <a title="Upload images and copy their address for your posts" th:href="@{/admin/media}" data-nav>Media</a>
+      <div class="gl">Inbox</div>
+      <a title="Read messages sent from the Contact Us form" th:href="@{/admin/messages}" data-nav>Messages <span class="pill errc" th:if="${unread != null and unread > 0}" th:text="${unread}">1</span></a>
+      <th:block th:if="${isSa}">
+        <div class="gl">Manage</div>
+        <a title="Add, rename, reorder or hide the tabs and menu sections" th:href="@{/admin/sections}" data-nav>Manage sections</a>
+        <a title="Edit About, Privacy Policy, Disclaimer, Terms and FAQs" th:href="@{/admin/pages}" data-nav>Pages</a>
+        <a title="Turn the free tools on or off and rename them" th:href="@{/admin/tools}" data-nav>Tools</a>
+        <a title="Pin posts to the top of Trending now" th:href="@{/admin/trending}" data-nav>Trending</a>
+        <a title="Emails collected from the subscribe box" th:href="@{/admin/subscribers}" data-nav>Subscribers</a>
+        <a title="Create editors and admins, disable accounts or reset passwords" th:href="@{/admin/users}" data-nav>Users and roles</a>
+        <a title="Which pages are called and which never are, plus the last 100 requests" th:href="@{/admin/logs}" data-nav>Page hits and logs</a>
+        <a title="Shows the values loaded from site.properties (domain, links, counts)" th:href="@{/admin/settings}" data-nav>Site settings</a>
+      </th:block>
+    </nav>
+  </aside>
+  <div class="adm">
+    <div class="atop">
+      <a title="Open the public website in a new tab" th:href="@{/}" target="_blank" rel="noopener">View site</a>
+      <div class="who" th:if="${me != null}">
+        <span class="av" th:text="${me.initials}">AB</span>
+        <span><b th:text="${me.name}" style="display:block;font-size:14px">Name</b><span class="pill inf" style="margin:0" th:text="${me.roleLabel}">Role</span></span>
+        <a title="Your account details and change password" class="btn" th:href="@{/admin/profile}">My profile</a>
+        <form th:action="@{/admin/logout}" method="post" class="inline"><button title="Sign out of the admin panel" class="btn" type="submit">Logout</button></form>
+      </div>
+    </div>
+    <div class="msg ok" th:if="${ok != null}" th:text="${ok}"></div>
+    <div class="msg err" th:if="${err != null}" th:text="${err}"></div>
+    <main th:replace="${content}">Content</main>
+  </div>
+</div>
+<script th:src="@{/js/site.js}"></script>
+</body>
+</html>

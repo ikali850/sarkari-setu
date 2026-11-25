@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Users and roles | Admin</title></head>
+<body>
+<main>
+  <h1>Users and roles</h1>
+  <div class="grid">
+    <section class="card"><h2>Editor can</h2><ul><li>Write and edit posts</li><li>Verify, publish and unpublish</li><li>See drafts, previews and messages</li></ul></section>
+    <section class="card"><h2>Super Admin can also</h2><ul><li>Create and disable users</li><li>Manage sections, pages, tools and trending</li><li>Delete posts, see subscribers and activity</li></ul></section>
+  </div>
+  <div class="card"><div class="scroll"><table style="min-width:760px">
+    <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Last login</th><th></th></tr>
+    <tr th:each="u : ${list}">
+      <td><b th:text="${u.name}">Name</b></td><td th:text="${u.email}">email</td>
+      <td><span class="pill inf" style="margin:0" th:text="${u.roleLabel}">Role</span></td>
+      <td th:text="${u.enabled} ? 'Active' : 'Disabled'">Active</td>
+      <td th:text="${u.lastLoginText}">never</td>
+      <td style="white-space:nowrap">
+        <form class="inline" th:action="@{/admin/users/{i}/toggle(i=${u.id})}" method="post"><button title="Block this user from logging in (or enable the account again)" class="btn" type="submit" th:text="${u.enabled} ? 'Disable' : 'Enable'">Disable</button></form>
+        <form class="inline" th:action="@{/admin/users/{i}/password(i=${u.id})}" method="post"><input type="password" name="newPassword" placeholder="New password" aria-label="New password" minlength="8" required style="width:150px;margin:0;display:inline-block"><button title="Set a new password for this user" class="btn" type="submit">Reset</button></form>
+      </td>
+    </tr>
+  </table></div></div>
+  <section class="card"><h2>Add a user</h2>
+    <form th:action="@{/admin/users/save}" method="post">
+      <div class="fg">
+        <label>Name<input name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Password (min 8 characters)<input type="password" name="password" minlength="8" required></label>
+        <label>Role<select name="role"><option value="EDITOR">Editor</option><option value="SUPER_ADMIN">Super Admin</option></select></label>
+      </div>
+      <div class="bar"><button title="Create the account with the chosen role" class="btn p" type="submit">Create user</button></div>
+    </form>
+  </section>
+  <section class="card"><h2>Recent activity</h2><div class="scroll"><table>
+    <tr th:each="a : ${activity}"><td th:text="${a.who}"></td><td th:text="${a.action}"></td><td class="meta" th:text="${a.happenedText}"></td></tr>
+  </table></div></section>
+</main>
+</body>
+</html>

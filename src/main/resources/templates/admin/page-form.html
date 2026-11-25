@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Page editor | Admin</title></head>
+<body>
+<main>
+  <h1>Page editor</h1>
+  <p class="hint">The default Privacy Policy and Terms are only templates. Read and adjust them for your site, and get legal advice if you need it.</p>
+  <form class="card" th:action="@{/admin/pages/save}" th:object="${staticPage}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <div class="fg">
+      <label>Title<input th:field="*{title}" required></label>
+      <label>Slug (auto if empty)<input th:field="*{slug}"></label>
+    </div>
+    <label style="margin-top:12px">Content (HTML allowed)<textarea th:field="*{body}" rows="16" style="font-family:inherit;font-size:14px"></textarea></label>
+    <label class="chk"><input type="checkbox" th:field="*{visible}">Visible on the site</label>
+    <label class="chk"><input type="checkbox" th:field="*{inFooter}">Show link in the footer</label>
+    <div class="bar"><button title="Save this page" class="btn p" type="submit">Save page</button><a title="Go back without saving" class="btn" th:href="@{/admin/pages}">Cancel</a></div>
+  </form>
+</main>
+</body>
+</html>

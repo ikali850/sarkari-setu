@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'Saved posts | ' + ${site.name}">Saved</title></head>
+<body>
+<main class="wrap">
+  <h1>Saved posts</h1>
+  <p class="sub">Saved in this browser only. Nothing is sent to our server.</p>
+  <div class="card" id="saved-list"></div>
+</main>
+</body>
+</html>

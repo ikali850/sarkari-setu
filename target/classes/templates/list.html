@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${section.name} + ' | ' + ${site.name}">Section</title></head>
+<body>
+<main class="wrap">
+  <div th:replace="~{fragments/parts :: crumbs(null, null, ${section.name})}"></div>
+  <div class="bar" style="margin-top:0"><h1 style="margin:0" th:text="${section.name}">Section</h1><span class="meta" th:text="${page.totalElements} + ' posts'">0 posts</span></div>
+  <div class="chips" th:if="${!#lists.isEmpty(filterTags)}">
+    <a class="chip" th:classappend="${#strings.isEmpty(tag)} ? 'on'" th:href="${tagBase}">All</a>
+    <a class="chip" th:each="t : ${filterTags}" th:classappend="${t == tag} ? 'on'" th:href="${tagBase} + 'tag=' + ${#uris.escapeQueryParam(t)}" th:text="${t}">Tag</a>
+  </div>
+  <div class="chips">
+    <span class="meta" style="align-self:center">Sort:</span>
+    <a class="chip" th:classappend="${sort == 'latest'} ? 'on'" th:href="${sortBase} + 'sort=latest'">Latest</a>
+    <a class="chip" th:classappend="${sort == 'views'} ? 'on'" th:href="${sortBase} + 'sort=views'">Most viewed</a>
+    <a class="chip" th:classappend="${sort == 'oldest'} ? 'on'" th:href="${sortBase} + 'sort=oldest'">Oldest</a>
+  </div>
+  <div class="card" style="margin-top:0">
+    <p th:if="${page.empty}" class="sub">No posts here yet.</p>
+    <th:block th:each="p : ${page.content}"><div th:replace="~{fragments/parts :: postRow(${p})}"></div></th:block>
+  </div>
+  <div th:replace="~{fragments/parts :: pager(${page}, ${pagerBase})}"></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'Free Mock Tests | ' + ${site.name}">Mock Tests</title></head>
+<body>
+<main class="wrap">
+  <div th:replace="~{fragments/parts :: crumbs(null, null, 'Mock Tests')}"></div>
+  <h1>Free Mock Tests</h1>
+  <p class="sub">Practice with a timer and see your score at the end. Your answers stay in your browser.</p>
+  <p class="sub" th:if="${#lists.isEmpty(tests)}">No tests yet. Add them in mock-tests.txt.</p>
+  <div class="grid">
+    <a class="card tile" th:each="t : ${tests}" th:href="@{/mock-tests/{x}(x=${t.slug})}" style="margin:0">
+      <span><span th:text="${t.title}">Test</span><small th:text="${t.count} + ' questions · ' + ${t.minutes} + ' minutes'">10 questions</small><small th:text="${t.description}"></small></span>
+    </a>
+  </div>
+</main>
+</body>
+</html>

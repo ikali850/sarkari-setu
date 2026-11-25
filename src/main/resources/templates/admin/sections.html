@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Sections | Admin</title></head>
+<body>
+<main>
+  <h1>Sections</h1>
+  <p class="sub">Every tab and menu item on the site comes from this list. Add a section here and it appears on the site. No code change needed.</p>
+  <form class="card" style="margin-top:12px" th:each="s : ${adminSections}" th:action="@{/admin/sections/save}" method="post">
+    <input type="hidden" name="id" th:value="${s.id}">
+    <div class="fg">
+      <label>Name<input name="name" th:value="${s.name}"></label>
+      <label>Slug<input name="slug" th:value="${s.slug}"></label>
+      <label>Kind<select name="kind"><option th:each="k : ${kinds}" th:value="${k}" th:text="${k}" th:selected="${k == s.kind}">k</option></select></label>
+      <label>Shown in<select name="placement"><option th:each="k : ${placements}" th:value="${k}" th:text="${k.name() == 'TAB'} ? 'Bottom tab' : 'More menu'" th:selected="${k == s.placement}">k</option></select></label>
+      <label>Order<input type="number" name="sortOrder" th:value="${s.sortOrder}"></label>
+    </div>
+    <div class="bar">
+      <input type="hidden" name="_visible" value="on">
+      <label class="chk"><input type="checkbox" name="visible" value="true" th:checked="${s.visible}">Visible</label>
+      <button title="Save the changes on this row" class="btn p" type="submit">Save</button>
+      <span class="meta" th:text="${counts[s.slug]} + ' posts'">0 posts</span>
+    </div>
+  </form>
+  <p class="hint">Bottom tab: only 3 or 4 sections fit on a phone. Put the rest in the More menu.</p>
+  <div class="card"><h2>Add a new section</h2>
+    <form th:action="@{/admin/sections/save}" method="post">
+      <div class="fg">
+        <label>Name<input name="name" placeholder="e.g. Scholarship" required></label>
+        <label>Slug (auto if empty)<input name="slug" placeholder="scholarship"></label>
+        <label>Kind<select name="kind"><option value="POSTS">POSTS (standalone posts)</option><option value="STAGE_LIST">STAGE_LIST (admit card, result...)</option><option value="RECRUITMENTS">RECRUITMENTS</option></select></label>
+        <label>Shown in<select name="placement"><option value="MORE">More menu</option><option value="TAB">Bottom tab</option></select></label>
+        <label>Order<input type="number" name="sortOrder" value="20"></label>
+      </div>
+      <input type="hidden" name="visible" value="true">
+      <div class="bar"><button title="Create the section; it appears on the menu and gets its own list page automatically" class="btn p" type="submit">Add section</button></div>
+    </form>
+  </div>
+  <div class="card"><h2>Delete an empty section</h2>
+    <div class="bar" style="margin-top:0">
+      <form class="inline" th:each="s : ${adminSections}" th:if="${counts[s.slug] == 0}" th:action="@{/admin/sections/{i}/delete(i=${s.id})}" method="post" data-confirm="Delete this section?">
+        <button title="Delete for good. This cannot be undone" class="btn danger" type="submit" th:text="'Delete ' + ${s.name}">Delete</button></form>
+      <span class="meta" th:if="${!counts.containsValue(0L)}">No empty sections.</span>
+    </div>
+  </div>
+</main>
+</body>
+</html>

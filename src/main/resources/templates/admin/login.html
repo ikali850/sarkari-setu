@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title th:text="'Admin sign in | ' + ${site.name}">Admin sign in</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<main class="card login">
+  <h1 style="font-size:22px">Admin sign in</h1>
+  <p class="sub" th:text="${site.name}">Site</p>
+  <div class="msg err" th:if="${param.error}">Wrong email or password, or the account is disabled.</div>
+  <div class="msg ok" th:if="${param.out}">You have been logged out.</div>
+  <form th:action="@{/admin/login}" method="post">
+    <label>Email<input type="email" name="username" autocomplete="username" required autofocus></label>
+    <label style="margin-top:10px">Password<input type="password" name="password" autocomplete="current-password" required></label>
+    <div class="bar"><button title="Log in to the admin panel" class="btn p" type="submit">Sign in</button></div>
+  </form>
+</main>
+</body>
+</html>

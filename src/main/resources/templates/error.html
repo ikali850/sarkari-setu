@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'Page not found | ' + ${site.name}">Error</title></head>
+<body>
+<main class="wrap">
+  <h1>Something went wrong</h1>
+  <p class="sub">The page you asked for is not available. It may have been moved or removed.</p>
+  <div class="bar" style="margin-top:0"><a class="btn p" th:href="@{/}">Go to Home</a><a class="btn" th:href="@{/search}">Search</a></div>
+</main>
+</body>
+</html>

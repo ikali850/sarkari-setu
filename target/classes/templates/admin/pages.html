@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Pages | Admin</title></head>
+<body>
+<main>
+  <div class="bar" style="margin-top:0"><h1 style="margin:0">Pages</h1><a title="Create a new basic page (for example Refund Policy)" class="btn p" th:href="@{/admin/pages/new}" style="margin-left:auto">+ New page</a></div>
+  <p class="sub">About, Privacy Policy, Disclaimer, Terms and any other basic page. You can use {site}, {domain}, {email}, {phone} and {address} inside the text; they fill from site.properties.</p>
+  <div class="card"><div class="scroll"><table>
+    <tr><th>Title</th><th>Address</th><th>Visible</th><th>In footer</th><th></th></tr>
+    <tr th:each="p : ${list}">
+      <td><b th:text="${p.title}">Title</b></td><td class="meta" th:text="'/p/' + ${p.slug}">/p/x</td>
+      <td th:text="${p.visible} ? 'Yes' : 'No'"></td><td th:text="${p.inFooter} ? 'Yes' : 'No'"></td>
+      <td style="white-space:nowrap"><a title="Open this in the editor" class="btn" th:href="@{/admin/pages/{i}/edit(i=${p.id})}">Edit</a>
+        <form class="inline" th:action="@{/admin/pages/{i}/delete(i=${p.id})}" method="post" data-confirm="Delete this page?"><button title="Delete for good. This cannot be undone" class="btn danger" type="submit">Delete</button></form></td>
+    </tr>
+  </table></div></div>
+  <p class="hint">The Contact Us page is built in (/contact) and its messages arrive in Messages.</p>
+</main>
+</body>
+</html>

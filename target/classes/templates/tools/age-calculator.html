@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${tool.name} + ' | ' + ${site.name}">Age Calculator</title></head>
+<body>
+<main class="wrap"><div class="toolbox">
+  <p class="meta"><a th:href="@{/tools}">All tools</a></p>
+  <h1 th:text="${tool.name}">Age Calculator</h1>
+  <p class="sub">Find your age on the date the notification says, and check the age limit.</p>
+  <div class="card">
+    <div class="fg">
+      <label>Date of birth<input type="date" id="dob"></label>
+      <label>Age as on<input type="date" id="asOn"></label>
+      <label>Minimum age (optional)<input type="number" id="minAge" min="0"></label>
+      <label>Maximum age (optional)<input type="number" id="maxAge" min="0"></label>
+      <label>Age relaxation in years (optional)<input type="number" id="relax" min="0" value="0"></label>
+    </div>
+    <div class="bar"><button class="btn p" id="go" type="button">Calculate</button></div>
+    <div id="out" style="margin-top:12px" aria-live="polite"></div>
+    <p class="hint">Always confirm the age rule and cut-off date in the official notification.</p>
+  </div>
+</div></main>
+<script th:src="@{/js/tools/age-calculator.js}"></script>
+</body>
+</html>

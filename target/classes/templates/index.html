@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${site.name} + ' | ' + ${site.tagline}">Home</title></head>
+<body>
+<main class="wrap">
+  <script type="application/ld+json" th:inline="javascript">
+  {"@context":"https://schema.org","@type":"WebSite","name":/*[[${site.name}]]*/ "","url":/*[[${site.baseUrl}]]*/ "",
+   "potentialAction":{"@type":"SearchAction","target":/*[[${site.baseUrl + '/search?q={q}'}]]*/ "","query-input":"required name=q"}}
+  </script>
+
+  <div class="hero2">
+    <h1 th:text="${site.tagline}">Tagline</h1>
+    <p>सरकारी भर्ती का हर चरण एक ही पेज पर: notification, admit card, result.</p>
+    <form class="hs" th:action="@{/search}" method="get" role="search">
+      <input name="q" placeholder="Search SSC, Police, Railway…" aria-label="Search recruitment">
+      <button class="btn p" type="submit">Search</button>
+    </form>
+    <div class="hstats"><span th:each="st : ${stats}"><b th:text="${st.count}">0</b>&nbsp;<span th:text="${st.label}">Jobs</span></span></div>
+  </div>
+
+  <div class="cats">
+    <a class="cat" th:each="c : ${cats}" th:href="${c.href}" th:style="'--f:' + ${c.color}">
+      <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path th:attr="d=${c.icon}"/></svg></i>
+      <span th:text="${c.name}">Section</span>
+    </a>
+  </div>
+
+  <div th:replace="~{fragments/parts :: trending(${trending})}"></div>
+  <div th:replace="~{fragments/parts :: closing(${closing})}"></div>
+
+  <div class="grid">
+    <th:block th:each="b : ${blocks}"><div th:replace="~{fragments/parts :: sectionCard(${b})}"></div></th:block>
+  </div>
+  <div class="grid" th:if="${!#lists.isEmpty(extraBlocks)}">
+    <th:block th:each="b : ${extraBlocks}"><div th:replace="~{fragments/parts :: sectionCard(${b})}"></div></th:block>
+  </div>
+
+  <section th:if="${!#lists.isEmpty(blogPosts)}">
+    <h2 style="margin-top:24px">From the Blog</h2>
+    <div class="grid" style="margin-top:8px">
+      <a class="card" th:each="p : ${blogPosts}" th:href="@{/post/{s}(s=${p.slug})}" style="color:var(--ink)"><b th:text="${p.title}">Title</b><div class="meta" th:text="${p.updatedOnText}">Updated</div></a>
+    </div>
+  </section>
+
+  <div th:replace="~{fragments/parts :: subscribe}"></div>
+
+  <section class="card" th:if="${faq != null}" style="margin-top:16px"><h2>Frequently asked questions</h2><div th:utext="${faq}"></div></section>
+
+  <section class="card disc" th:if="${!#strings.isEmpty(site.disclaimerNote)}">
+    <h2>Disclaimer</h2><p th:text="${site.disclaimerNote}"></p>
+    <a th:href="@{/p/disclaimer}">Read the full disclaimer</a>
+  </section>
+</main>
+</body>
+</html>

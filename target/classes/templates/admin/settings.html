@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Site settings | Admin</title></head>
+<body>
+<main>
+  <h1>Site settings</h1>
+  <p class="sub">These values come from <b>site.properties</b>. To change the domain or anything else, edit that file and restart the app. You can keep a copy next to the jar (./site.properties) to override without rebuilding.</p>
+  <div class="card" style="margin-top:0">
+    <div class="st"><span>Site name</span><b th:text="${site.name}"></b></div>
+    <div class="st"><span>Tagline</span><span th:text="${site.tagline}"></span></div>
+    <div class="st"><span>Domain (base url)</span><b th:text="${site.baseUrl}"></b></div>
+    <div class="st"><span>Contact email</span><span th:text="${site.contactEmail}"></span></div>
+    <div class="st"><span>Phone</span><span th:text="${site.phone}"></span></div>
+    <div class="st"><span>Address</span><span th:text="${site.address}"></span></div>
+    <div class="st"><span>Telegram</span><span th:text="${site.telegramUrl}"></span></div>
+    <div class="st"><span>WhatsApp</span><span th:text="${site.whatsappUrl}"></span></div>
+    <div class="st"><span>Instagram</span><span th:text="${site.instagramUrl}"></span></div>
+    <div class="st"><span>YouTube</span><span th:text="${site.youtubeUrl}"></span></div>
+    <div class="st"><span>Analytics id</span><span th:text="${site.analyticsId}"></span></div>
+    <div class="st"><span>Trending count</span><span th:text="${site.trendingCount}"></span></div>
+    <div class="st"><span>Posts per page</span><span th:text="${site.pageSize}"></span></div>
+    <div class="st"><span>Filter tags</span><span th:text="${site.filterTags}"></span></div>
+  </div>
+  <p class="hint">Sitemap: <a title="The sitemap search engines read" th:href="@{/sitemap.xml}" target="_blank">/sitemap.xml</a> · Robots: <a title="The robots file search engines read" th:href="@{/robots.txt}" target="_blank">/robots.txt</a></p>
+</main>
+</body>
+</html>

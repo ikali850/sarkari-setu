@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'More | ' + ${site.name}">More</title></head>
+<body>
+<main class="wrap">
+  <h1>More sections</h1>
+  <p class="sub">Every section and tool on the site.</p>
+  <div class="tiles">
+    <a class="tile" th:each="s : ${moreSections}" th:href="@{/s/{x}(x=${s.slug})}" th:text="${s.name}">Section</a>
+    <a class="tile" th:href="@{/mock-tests}">Mock Tests</a>
+    <a class="tile" th:each="t : ${tools}" th:href="@{/tools/{x}(x=${t.slug})}"><span th:text="${t.name}">Tool</span></a>
+    <a class="tile" th:href="@{/saved}">Saved posts</a>
+    <a class="tile" th:href="@{/p/faq}">FAQs</a>
+    <a class="tile" th:href="@{/contact}">Contact Us</a>
+  </div>
+</main>
+</body>
+</html>

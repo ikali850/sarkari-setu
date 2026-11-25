@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${tool.name} + ' | ' + ${site.name}">Typing Test</title></head>
+<body>
+<main class="wrap"><div class="toolbox">
+  <p class="meta"><a th:href="@{/tools}">All tools</a></p>
+  <h1 th:text="${tool.name}">Typing Speed Test</h1>
+  <p class="sub">Start typing the text below. The timer starts with your first key. Time left: <b id="time">60</b>s</p>
+  <div class="card">
+    <div class="typing-text" id="text" aria-label="Text to type"></div>
+    <label style="margin-top:12px">Type here<textarea id="typed" rows="4" style="font-family:inherit;font-size:16px" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea></label>
+    <div class="bar"><button class="btn" id="again" type="button">Try another</button></div>
+    <div id="result" style="margin-top:12px" aria-live="polite"></div>
+  </div>
+</div></main>
+<script th:src="@{/js/tools/typing-test.js}"></script>
+</body>
+</html>

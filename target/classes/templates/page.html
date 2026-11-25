@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="${pageTitle} + ' | ' + ${site.name}">Page</title></head>
+<body>
+<main class="wrap">
+  <h1 th:text="${pageTitle}">Page</h1>
+  <div class="card prose" th:utext="${pageBody}">Body</div>
+</main>
+</body>
+</html>

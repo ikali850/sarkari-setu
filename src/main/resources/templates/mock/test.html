@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${test.title} + ' | ' + ${site.name}">Mock Test</title></head>
+<body>
+<main class="wrap">
+  <div th:replace="~{fragments/parts :: crumbs('Mock Tests', '/mock-tests', ${test.title})}"></div>
+  <h1 th:text="${test.title}">Mock Test</h1>
+  <p class="sub" th:text="${test.count} + ' questions · ' + ${test.minutes} + ' minutes · no negative marking'">10 questions</p>
+  <form id="quiz" th:attr="data-minutes=${test.minutes}" onsubmit="return false">
+    <div class="card" id="intro">
+      <p>When you press Start, the timer begins. You can submit early. Correct answers and short explanations appear after you submit.</p>
+      <div class="bar" style="margin-top:0"><button class="btn p" id="start" type="button">Start test</button></div>
+    </div>
+    <div id="qs" hidden>
+      <div class="card quizbar"><b>Time left: <span id="clock">--:--</span></b><span id="answered" class="meta">0 answered</span>
+        <button class="btn p" id="finish" type="button" style="margin-left:auto">Submit</button></div>
+      <div class="card q" th:each="q, i : ${test.questions}" th:attr="data-correct=${q.correctLetter}">
+        <p><b th:text="${i.count} + '. ' + ${q.text}">Question</b></p>
+        <label class="opt" th:each="o, j : ${q.options}"><input type="radio" th:name="'q' + ${i.index}" th:value="${letters[j.index]}"><span th:text="${letters[j.index]} + '. ' + ${o}">Option</span></label>
+        <p class="explain" hidden th:text="${q.explain}"></p>
+      </div>
+    </div>
+    <div class="card" id="result" hidden role="status">
+      <div class="big" id="score">0 / 0</div>
+      <p id="scoreText"></p>
+      <div class="bar"><a class="btn p" th:href="@{/mock-tests/{x}(x=${test.slug})}">Try again</a><a class="btn" th:href="@{/mock-tests}">All tests</a></div>
+    </div>
+  </form>
+</main>
+<script th:src="@{/js/mock.js}"></script>
+</body>
+</html>

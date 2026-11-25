@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Subscribers | Admin</title></head>
+<body>
+<main>
+  <div class="bar" style="margin-top:0"><h1 style="margin:0">Subscribers</h1><a title="Download all subscriber emails as a CSV file" class="btn" th:href="@{/admin/subscribers/export.csv}" style="margin-left:auto">Download CSV</a></div>
+  <p class="sub" th:text="${#lists.size(list)} + ' email addresses collected from the subscribe box. Sending emails is not built yet.'">count</p>
+  <div class="card"><div class="scroll"><table>
+    <tr><th>Email</th><th>Subscribed</th></tr>
+    <tr th:each="s : ${list}"><td th:text="${s.email}">email</td><td th:text="${s.createdText}">date</td></tr>
+    <tr th:if="${#lists.isEmpty(list)}"><td colspan="2">No subscribers yet.</td></tr>
+  </table></div></div>
+</main>
+</body>
+</html>

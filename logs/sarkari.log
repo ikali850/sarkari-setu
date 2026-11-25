@@ -1,0 +1,748 @@
+2026-11-25 09:01:30 INFO  c.s.SarkariSetuApplication Starting SarkariSetuApplication using Java 21.0.12 with PID 121765 (/home/mannu/Documents/sarkari-setu/target/classes started by mannu in /home/mannu/Documents/sarkari-setu)
+2026-11-25 09:01:30 INFO  c.s.SarkariSetuApplication No active profile set, falling back to 1 default profile: "default"
+2026-11-25 09:01:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25 09:01:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 314 ms. Found 8 JPA repository interfaces.
+2026-11-25 09:01:36 INFO  o.s.b.t.TomcatWebServer Tomcat initialized with port 8080 (http)
+2026-11-25 09:01:36 INFO  o.a.c.c.StandardService Starting service [Tomcat]
+2026-11-25 09:01:36 INFO  o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25 09:01:37 INFO  o.s.b.w.c.s.WebApplicationContextInitializer Root WebApplicationContext: initialization completed in 6833 ms
+2026-11-25 09:01:37 INFO  o.h.orm.jpa  HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-25 09:01:38 INFO  o.h.orm.core HHH000001: Hibernate ORM core version 7.2.25.Final
+2026-11-25 09:01:40 INFO  o.s.o.j.p.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25 09:01:40 INFO  c.z.h.HikariDataSource HikariPool-1 - Starting...
+2026-11-25 09:01:41 INFO  c.z.h.p.HikariPool HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/sarkari user=SA
+2026-11-25 09:01:41 INFO  c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2026-11-25 09:01:41 INFO  o.h.o.c.pooling HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/sarkari]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: SARKARI/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-25 09:01:45 INFO  o.h.orm.core HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25 09:01:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25 09:01:46 INFO  o.s.d.j.r.q.QueryEnhancerFactories Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-25 09:01:47 INFO  c.s.s.MockTestService Mock tests loaded: 5
+2026-11-25 09:01:48 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer Global AuthenticationManager configured with UserDetailsService bean with name appUserDetailsService
+2026-11-25 09:01:49 INFO  o.s.b.w.a.WelcomePageHandlerMapping Adding welcome page template: index
+2026-11-25 09:01:49 INFO  o.s.b.t.TomcatWebServer Tomcat started on port 8080 (http) with context path '/'
+2026-11-25 09:01:49 INFO  c.s.SarkariSetuApplication Started SarkariSetuApplication in 22.661 seconds (process running for 26.422)
+2026-11-25 09:01:50 WARN  c.s.s.DataSeeder First Super Admin created: admin@example.com. Change the password after logging in (Admin > My profile).
+2026-11-25 09:01:50 INFO  c.s.s.DemoPosts Reading demo data from the built-in demo-data.txt
+2026-11-25 09:01:51 INFO  c.s.s.DataSeeder Added 124 sample posts (set site.seed-demo=false to skip).
+2026-11-25 09:02:41 INFO  o.s.b.t.GracefulShutdown Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25 09:02:41 INFO  o.s.b.t.GracefulShutdown Graceful shutdown complete
+2026-11-25 09:02:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25 09:02:41 INFO  c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2026-11-25 09:02:41 INFO  c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
+2026-11-25 09:02:43 INFO  c.s.SarkariSetuApplication Starting SarkariSetuApplication using Java 21.0.12 with PID 122389 (/home/mannu/Documents/sarkari-setu/target/classes started by mannu in /home/mannu/Documents/sarkari-setu)
+2026-11-25 09:02:43 INFO  c.s.SarkariSetuApplication No active profile set, falling back to 1 default profile: "default"
+2026-11-25 09:02:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25 09:02:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 101 ms. Found 8 JPA repository interfaces.
+2026-11-25 09:02:45 INFO  o.s.b.t.TomcatWebServer Tomcat initialized with port 8080 (http)
+2026-11-25 09:02:45 INFO  o.a.c.c.StandardService Starting service [Tomcat]
+2026-11-25 09:02:45 INFO  o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25 09:02:45 INFO  o.s.b.w.c.s.WebApplicationContextInitializer Root WebApplicationContext: initialization completed in 2246 ms
+2026-11-25 09:02:46 INFO  o.h.orm.jpa  HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-25 09:02:46 INFO  o.h.orm.core HHH000001: Hibernate ORM core version 7.2.25.Final
+2026-11-25 09:02:47 INFO  o.s.o.j.p.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25 09:02:47 INFO  c.z.h.HikariDataSource HikariPool-1 - Starting...
+2026-11-25 09:02:47 INFO  c.z.h.p.HikariPool HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/sarkari user=SA
+2026-11-25 09:02:47 INFO  c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2026-11-25 09:02:47 INFO  o.h.o.c.pooling HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/sarkari]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: SARKARI/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-25 09:02:49 INFO  o.h.orm.core HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25 09:02:49 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25 09:02:49 INFO  o.s.d.j.r.q.QueryEnhancerFactories Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-25 09:02:50 INFO  c.s.s.MockTestService Mock tests loaded: 5
+2026-11-25 09:02:51 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer Global AuthenticationManager configured with UserDetailsService bean with name appUserDetailsService
+2026-11-25 09:02:51 INFO  o.s.b.w.a.WelcomePageHandlerMapping Adding welcome page template: index
+2026-11-25 09:02:51 INFO  o.s.b.t.TomcatWebServer Tomcat started on port 8080 (http) with context path '/'
+2026-11-25 09:02:51 INFO  c.s.SarkariSetuApplication Started SarkariSetuApplication in 9.182 seconds (process running for 9.914)
+2026-11-25 09:03:04 INFO  o.a.c.c.C.[.[.[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25 09:03:04 INFO  o.s.w.s.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2026-11-25 09:03:04 INFO  o.s.w.s.DispatcherServlet Completed initialization in 3 ms
+2026-11-25 09:03:06 ERROR o.t.TemplateEngine [THYMELEAF][http-nio-8080-exec-1] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:374)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:193)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1305)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1042)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at com.sarkarisetu.web.RequestLogFilter.doFilterInternal(RequestLogFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:378)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:246)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:91)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:76)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.attoparser.ParseException: Error during execution of processor 'org.thymeleaf.spring6.processor.SpringActionTagProcessor' (template: "fragments/parts" - line 78, col 11)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 92 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Error during execution of processor 'org.thymeleaf.spring6.processor.SpringActionTagProcessor' (template: "fragments/parts" - line 78, col 11)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:117)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 94 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot create a session after the response has been committed
+	at org.apache.catalina.connector.Request.doGetSession(Request.java:2836)
+	at org.apache.catalina.connector.Request.getSession(Request.java:2258)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:407)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:412)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.saveToken(HttpSessionCsrfTokenRepository.java:59)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.init(RepositoryDeferredCsrfToken.java:73)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:54)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:33)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler.lambda$deferCsrfTokenUpdate$0(XorCsrfTokenRequestAttributeHandler.java:70)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:153)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:140)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getDelegate(CsrfTokenRequestAttributeHandler.java:98)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getParameterName(CsrfTokenRequestAttributeHandler.java:89)
+	at org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor.getExtraHiddenFields(CsrfRequestDataValueProcessor.java:74)
+	at org.thymeleaf.spring6.context.webmvc.SpringWebMvcThymeleafRequestDataValueProcessor.getExtraHiddenFields(SpringWebMvcThymeleafRequestDataValueProcessor.java:80)
+	at org.thymeleaf.spring6.requestdata.RequestDataValueProcessorUtils.getExtraHiddenFields(RequestDataValueProcessorUtils.java:79)
+	at org.thymeleaf.spring6.processor.SpringActionTagProcessor.doProcess(SpringActionTagProcessor.java:118)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:160)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	... 116 common frames omitted
+2026-11-25 09:03:06 INFO  PAGE         GET / -> 200 (2049 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:03:06 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+java.lang.IllegalStateException: Cannot create a session after the response has been committed
+	at org.apache.catalina.connector.Request.doGetSession(Request.java:2836)
+	at org.apache.catalina.connector.Request.getSession(Request.java:2258)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:407)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:412)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.saveToken(HttpSessionCsrfTokenRepository.java:59)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.init(RepositoryDeferredCsrfToken.java:73)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:54)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:33)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler.lambda$deferCsrfTokenUpdate$0(XorCsrfTokenRequestAttributeHandler.java:70)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:153)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:140)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getDelegate(CsrfTokenRequestAttributeHandler.java:98)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getParameterName(CsrfTokenRequestAttributeHandler.java:89)
+	at org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor.getExtraHiddenFields(CsrfRequestDataValueProcessor.java:74)
+	at org.thymeleaf.spring6.context.webmvc.SpringWebMvcThymeleafRequestDataValueProcessor.getExtraHiddenFields(SpringWebMvcThymeleafRequestDataValueProcessor.java:80)
+	at org.thymeleaf.spring6.requestdata.RequestDataValueProcessorUtils.getExtraHiddenFields(RequestDataValueProcessorUtils.java:79)
+	at org.thymeleaf.spring6.processor.SpringActionTagProcessor.doProcess(SpringActionTagProcessor.java:118)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:160)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:374)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:193)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1305)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1042)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at com.sarkarisetu.web.RequestLogFilter.doFilterInternal(RequestLogFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:378)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:246)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:91)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:76)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-11-25 09:03:47 INFO  PAGE         GET /tools -> 200 (58 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:03:50 INFO  PAGE         GET /tools/photo-resizer -> 200 (55 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:06 INFO  PAGE         GET /tools -> 200 (45 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:09 INFO  PAGE         GET /s/jobs -> 200 (191 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:21 INFO  PAGE         GET /s/jobs?page=1 -> 200 (139 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:32 INFO  PAGE         GET /s/jobs?page=3 -> 200 (48 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:37 INFO  PAGE         GET /s/jobs?page=2 -> 200 (133 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:41 INFO  PAGE         GET /s/jobs?sort=views -> 200 (104 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:44 INFO  PAGE         GET /s/jobs?sort=oldest -> 200 (95 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:46 INFO  PAGE         GET /s/jobs?sort=latest -> 200 (107 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:51 INFO  PAGE         GET /s/jobs?tag=10th -> 200 (160 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:53 INFO  PAGE         GET /s/jobs?tag=12th -> 200 (248 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:04:54 INFO  PAGE         GET /s/jobs?tag=Graduate -> 200 (125 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:01 INFO  PAGE         GET /s/admit-card -> 200 (97 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:09 INFO  PAGE         GET /more -> 200 (36 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:37 INFO  PAGE         GET /saved -> 200 (26 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:44 INFO  PAGE         GET /tools -> 200 (26 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:47 INFO  PAGE         GET /more -> 200 (28 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:48 INFO  PAGE         GET /mock-tests -> 200 (37 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:05:51 INFO  PAGE         GET /mock-tests/mock-general-knowledge-1 -> 200 (69 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:02 ERROR o.t.TemplateEngine [THYMELEAF][http-nio-8080-exec-6] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:374)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:193)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1305)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1042)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at com.sarkarisetu.web.RequestLogFilter.doFilterInternal(RequestLogFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:378)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:246)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:91)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:76)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.attoparser.ParseException: Error during execution of processor 'org.thymeleaf.spring6.processor.SpringActionTagProcessor' (template: "fragments/parts" - line 78, col 11)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 92 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Error during execution of processor 'org.thymeleaf.spring6.processor.SpringActionTagProcessor' (template: "fragments/parts" - line 78, col 11)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:117)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 94 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot create a session after the response has been committed
+	at org.apache.catalina.connector.Request.doGetSession(Request.java:2836)
+	at org.apache.catalina.connector.Request.getSession(Request.java:2258)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:407)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:412)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.saveToken(HttpSessionCsrfTokenRepository.java:59)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.init(RepositoryDeferredCsrfToken.java:73)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:54)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:33)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler.lambda$deferCsrfTokenUpdate$0(XorCsrfTokenRequestAttributeHandler.java:70)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:153)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:140)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getDelegate(CsrfTokenRequestAttributeHandler.java:98)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getParameterName(CsrfTokenRequestAttributeHandler.java:89)
+	at org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor.getExtraHiddenFields(CsrfRequestDataValueProcessor.java:74)
+	at org.thymeleaf.spring6.context.webmvc.SpringWebMvcThymeleafRequestDataValueProcessor.getExtraHiddenFields(SpringWebMvcThymeleafRequestDataValueProcessor.java:80)
+	at org.thymeleaf.spring6.requestdata.RequestDataValueProcessorUtils.getExtraHiddenFields(RequestDataValueProcessorUtils.java:79)
+	at org.thymeleaf.spring6.processor.SpringActionTagProcessor.doProcess(SpringActionTagProcessor.java:118)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:160)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	... 116 common frames omitted
+2026-11-25 09:06:02 INFO  PAGE         GET / -> 200 (222 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:02 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+java.lang.IllegalStateException: Cannot create a session after the response has been committed
+	at org.apache.catalina.connector.Request.doGetSession(Request.java:2836)
+	at org.apache.catalina.connector.Request.getSession(Request.java:2258)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:407)
+	at org.apache.catalina.connector.RequestFacade.getSession(RequestFacade.java:412)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
+	at org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.saveToken(HttpSessionCsrfTokenRepository.java:59)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.init(RepositoryDeferredCsrfToken.java:73)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:54)
+	at org.springframework.security.web.csrf.RepositoryDeferredCsrfToken.get(RepositoryDeferredCsrfToken.java:33)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler.lambda$deferCsrfTokenUpdate$0(XorCsrfTokenRequestAttributeHandler.java:70)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:153)
+	at org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler$CachedCsrfTokenSupplier.get(XorCsrfTokenRequestAttributeHandler.java:140)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getDelegate(CsrfTokenRequestAttributeHandler.java:98)
+	at org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken.getParameterName(CsrfTokenRequestAttributeHandler.java:89)
+	at org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor.getExtraHiddenFields(CsrfRequestDataValueProcessor.java:74)
+	at org.thymeleaf.spring6.context.webmvc.SpringWebMvcThymeleafRequestDataValueProcessor.getExtraHiddenFields(SpringWebMvcThymeleafRequestDataValueProcessor.java:80)
+	at org.thymeleaf.spring6.requestdata.RequestDataValueProcessorUtils.getExtraHiddenFields(RequestDataValueProcessorUtils.java:79)
+	at org.thymeleaf.spring6.processor.SpringActionTagProcessor.doProcess(SpringActionTagProcessor.java:118)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:160)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:374)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:193)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1305)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1042)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at com.sarkarisetu.web.RequestLogFilter.doFilterInternal(RequestLogFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:378)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:246)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:91)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:76)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:387)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-11-25 09:06:32 INFO  PAGE         GET /admin/login -> 200 (40 ms) user=- ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:34 INFO  LOGIN        login ok: admin@example.com
+2026-11-25 09:06:35 INFO  PAGE         GET /admin -> 200 (247 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:50 INFO  PAGE         GET /admin/media -> 200 (47 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:57 INFO  c.s.w.MediaController image uploaded by admin@example.com: 0dff8edf8a10.png
+2026-11-25 09:06:57 INFO  PAGE         POST /admin/media/upload -> 302 (51 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:57 INFO  PAGE         GET /admin/media -> 200 (63 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:06:57 INFO  PAGE         GET /uploads/0dff8edf8a10.png -> 200 (14 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:23 INFO  c.s.w.MediaController image uploaded by admin@example.com: 4b4f326b3f88.png
+2026-11-25 09:07:23 INFO  PAGE         POST /admin/media/upload -> 302 (22 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:23 INFO  PAGE         GET /admin/media -> 200 (82 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:23 INFO  PAGE         GET /uploads/4b4f326b3f88.png -> 200 (19 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:23 INFO  PAGE         GET /uploads/0dff8edf8a10.png -> 200 (23 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:32 INFO  c.s.w.MediaController image deleted by admin@example.com: 4b4f326b3f88.png
+2026-11-25 09:07:32 INFO  PAGE         POST /admin/media/delete -> 302 (37 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:32 INFO  PAGE         GET /admin/media -> 200 (71 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:33 INFO  PAGE         GET /uploads/0dff8edf8a10.png -> 200 (31 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:41 INFO  c.s.w.MediaController image deleted by admin@example.com: 0dff8edf8a10.png
+2026-11-25 09:07:41 INFO  PAGE         POST /admin/media/delete -> 302 (50 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:41 INFO  PAGE         GET /admin/media -> 200 (67 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:07:48 INFO  PAGE         GET /admin -> 200 (158 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:08:22 INFO  PAGE         GET /admin/users -> 200 (81 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:08:37 INFO  PAGE         GET /admin/posts/new -> 200 (142 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:08:39 INFO  PAGE         GET /admin/posts -> 200 (193 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:08:59 INFO  PAGE         GET /admin/posts/124/preview -> 200 (116 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:09:06 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (7 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:09:22 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (6 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:09:56 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (13 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:09:57 INFO  PAGE         GET /more -> 200 (55 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:09:57 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (9 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:10:07 INFO  PAGE         GET /s/jobs -> 200 (156 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:10:07 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (10 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:10:24 INFO  PAGE         GET /s/jobs?page=1 -> 200 (152 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:10:24 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (10 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:10:34 INFO  PAGE         GET / -> 200 (487 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:10:34 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (3 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:11:15 INFO  PAGE         GET / -> 200 (328 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:11:15 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (1 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:11:30 INFO  PAGE         GET /post/rrb-ntpc-2026-recruitment -> 200 (218 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:11:47 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (8 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:21 INFO  PAGE         GET /more -> 200 (45 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:21 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (5 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:25 INFO  PAGE         GET /saved -> 200 (21 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:26 WARN  PAGE         GET /.well-known/appspecific/com.chrome.devtools.json -> 404 (2 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:31 INFO  PAGE         GET /post/rrb-ntpc-2026-recruitment -> 200 (83 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:38 INFO  PAGE         GET / -> 200 (263 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:12:58 INFO  PAGE         GET /admin/posts?status=&q=&section=jobs -> 200 (222 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:08 INFO  PAGE         GET /admin/sections -> 200 (120 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:32 INFO  PAGE         GET /admin/pages -> 200 (52 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:44 INFO  PAGE         GET /admin/tools -> 200 (44 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:48 INFO  PAGE         GET /admin/trending -> 200 (81 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:54 INFO  PAGE         POST /admin/trending/69/pin -> 302 (107 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:54 INFO  PAGE         GET /admin/trending -> 200 (66 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:56 INFO  PAGE         POST /admin/trending/83/pin -> 302 (36 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:56 INFO  PAGE         GET /admin/trending -> 200 (86 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:58 INFO  PAGE         POST /admin/trending/16/pin -> 302 (45 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:58 INFO  PAGE         GET /admin/trending -> 200 (102 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:59 INFO  PAGE         POST /admin/trending/110/pin -> 302 (54 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:13:59 INFO  PAGE         GET /admin/trending -> 200 (61 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:14:04 INFO  PAGE         POST /admin/trending/60/pin -> 302 (48 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:14:04 INFO  PAGE         GET /admin/trending -> 200 (95 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:14:33 INFO  PAGE         POST /admin/trending/110/pin -> 302 (25 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:14:33 INFO  PAGE         GET /admin/trending -> 200 (44 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:14:41 INFO  PAGE         GET /admin/posts?section=blog -> 200 (49 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:15:20 INFO  PAGE         GET /admin/logs -> 200 (41 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:15:40 INFO  PAGE         GET /admin -> 200 (47 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:15:49 INFO  PAGE         GET /admin/posts/121/edit -> 200 (37 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:15:58 INFO  PAGE         GET /admin -> 200 (90 ms) user=admin@example.com ip=0:0:0:0:0:0:0:1
+2026-11-25 09:16:11 INFO  o.s.b.t.GracefulShutdown Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25 09:16:11 INFO  o.s.b.t.GracefulShutdown Graceful shutdown complete
+2026-11-25 09:16:11 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25 09:16:11 INFO  c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2026-11-25 09:16:11 INFO  c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.

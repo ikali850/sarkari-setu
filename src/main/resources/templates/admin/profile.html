@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>My profile | Admin</title></head>
+<body>
+<main>
+  <h1>My profile</h1>
+  <section class="card" style="margin-top:0">
+    <div class="st"><span>Name</span><b th:text="${me.name}"></b></div>
+    <div class="st"><span>Email</span><span th:text="${me.email}"></span></div>
+    <div class="st"><span>Role</span><span class="pill inf" style="margin:0" th:text="${me.roleLabel}"></span></div>
+  </section>
+  <form class="card" th:action="@{/admin/profile/password}" method="post" style="max-width:420px">
+    <h2>Change password</h2>
+    <label>Current password<input type="password" name="current" autocomplete="current-password" required></label>
+    <label style="margin-top:10px">New password (min 8 characters)<input type="password" name="newPassword" minlength="8" autocomplete="new-password" required></label>
+    <div class="bar"><button title="Save the new password" class="btn p" type="submit">Change password</button></div>
+  </form>
+</main>
+</body>
+</html>

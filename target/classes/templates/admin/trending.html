@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Trending | Admin</title></head>
+<body>
+<main>
+  <h1>Trending</h1>
+  <p class="sub">The home page shows pinned posts first, then the most viewed. How many are shown is set by site.trending-count in site.properties.</p>
+  <div class="card" style="margin-top:0"><div class="scroll"><table>
+    <tr><th>#</th><th>Post</th><th>Views</th><th>Source</th><th></th></tr>
+    <tr th:each="p, i : ${list}">
+      <td th:text="${i.count}">1</td><td><b th:text="${p.title}">Title</b></td><td th:text="${p.views}">0</td>
+      <td><span class="pill" style="margin:0" th:classappend="${p.pinned} ? 'inf' : 'mu'" th:text="${p.pinned} ? 'Pinned' : 'Auto'">Auto</span></td>
+      <td><form class="inline" th:action="@{/admin/trending/{i}/pin(i=${p.id})}" method="post"><button title="Keep this post at the top of Trending now (or unpin to go back to automatic order)" class="btn" type="submit" th:text="${p.pinned} ? 'Unpin' : 'Pin'">Pin</button></form></td>
+    </tr>
+  </table></div></div>
+</main>
+</body>
+</html>

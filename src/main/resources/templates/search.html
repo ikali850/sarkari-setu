@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'Search | ' + ${site.name}">Search</title></head>
+<body>
+<main class="wrap">
+  <div th:replace="~{fragments/parts :: crumbs(null, null, 'Search')}"></div>
+  <h1>Search</h1>
+  <form th:action="@{/search}" method="get" class="bar" style="margin-top:0">
+    <input name="q" th:value="${q}" placeholder="Search recruitment…" aria-label="Search" style="max-width:420px;margin:0">
+    <button class="btn p" type="submit">Search</button>
+  </form>
+  <p class="meta" th:if="${!#strings.isEmpty(q)}" th:text="${page.totalElements} + ' results for ' + ${q}">results</p>
+  <div class="card">
+    <p class="sub" th:if="${#strings.isEmpty(q)}">Type a name, for example "SSC" or "Police".</p>
+    <p class="sub" th:if="${!#strings.isEmpty(q) and page.empty}">No results. Try a shorter word, or browse the <a th:href="@{/more}">sections</a>.</p>
+    <th:block th:each="p : ${page.content}"><div th:replace="~{fragments/parts :: postRow(${p})}"></div></th:block>
+  </div>
+  <div th:replace="~{fragments/parts :: pager(${page}, ${pagerBase})}"></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${tool.name} + ' | ' + ${site.name}">Photo Resizer</title></head>
+<body>
+<main class="wrap"><div class="toolbox">
+  <p class="meta"><a th:href="@{/tools}">All tools</a></p>
+  <h1 th:text="${tool.name}">Photo and Signature Resizer</h1>
+  <p class="sub">Set the size in pixels and the maximum KB a form asks for. Your image never leaves your device.</p>
+  <div class="card">
+    <label>Choose image<input type="file" id="file" accept="image/*"></label>
+    <div class="fg" style="margin-top:12px">
+      <label>Width (px)<input type="number" id="w" min="1"></label>
+      <label>Height (px)<input type="number" id="h" min="1"></label>
+      <label>Maximum size (KB)<input type="number" id="kb" min="5" value="50"></label>
+    </div>
+    <div class="bar"><button class="btn p" id="go" type="button">Resize</button><a class="btn" id="dl" download="resized.jpg" hidden>Download</a></div>
+    <p class="hint" id="msg" aria-live="polite"></p>
+    <img id="prev" alt="Preview" hidden style="max-width:100%;margin-top:10px;border:1px solid var(--line);border-radius:8px">
+  </div>
+</div></main>
+<script th:src="@{/js/tools/photo-resizer.js}"></script>
+</body>
+</html>

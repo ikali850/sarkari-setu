@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, null)}">
+<head><title th:text="'Contact Us | ' + ${site.name}">Contact</title></head>
+<body>
+<main class="wrap">
+  <h1>Contact Us</h1>
+  <p class="sub">Questions, corrections or suggestions? Send us a message.</p>
+  <div class="msg ok" th:if="${ok != null}" th:text="${ok}"></div>
+  <div class="msg err" th:if="${err != null}" th:text="${err}"></div>
+  <div class="grid">
+    <form class="card" th:action="@{/contact}" method="post">
+      <label>Your name<input name="name" maxlength="100" required></label>
+      <label style="margin-top:10px">Email<input type="email" name="email" maxlength="150" required></label>
+      <label style="margin-top:10px">Subject<input name="subject" maxlength="150"></label>
+      <label style="margin-top:10px">Message<textarea name="message" rows="5" maxlength="3000" required style="font-family:inherit;font-size:15px"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="bar"><button class="btn p" type="submit">Send message</button></div>
+    </form>
+    <section class="card">
+      <h2>Other ways to reach us</h2>
+      <div class="st"><span>Email</span><a th:href="'mailto:' + ${site.contactEmail}" th:text="${site.contactEmail}">email</a></div>
+      <div class="st" th:if="${!#strings.isEmpty(site.phone)}"><span>Phone</span><span th:text="${site.phone}"></span></div>
+      <div class="st" th:if="${!#strings.isEmpty(site.address)}"><span>Address</span><span th:text="${site.address}"></span></div>
+      <div class="st" th:if="${!#strings.isEmpty(site.telegramUrl)}"><span>Telegram</span><a th:href="${site.telegramUrl}" rel="noopener">Open channel</a></div>
+    </section>
+  </div>
+</main>
+</body>
+</html>

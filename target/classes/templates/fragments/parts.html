@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+  <!-- Breadcrumb: Home > parent > current -->
+  <nav th:fragment="crumbs(parent, parentUrl, current)" class="crumbs" aria-label="Breadcrumb">
+    <a th:href="@{/}">Home</a><span aria-hidden="true">&rsaquo;</span>
+    <a th:if="${parent != null}" th:href="@{${parentUrl}}" th:text="${parent}">Parent</a><span th:if="${parent != null}" aria-hidden="true">&rsaquo;</span>
+    <span th:text="${current}" aria-current="page">Current</span>
+  </nav>
+
+  <!-- One post in a list: title, "Updated on" line, status chip on the right -->
+  <div th:fragment="postRow(p)" class="row">
+    <div>
+      <a th:href="@{/post/{s}(s=${p.slug})}"><b th:text="${p.title}">Title</b></a>
+      <div class="meta" th:text="${p.updatedOnText}">Updated on</div>
+    </div>
+    <span th:if="${!#strings.isEmpty(p.badge)}" class="pill" th:classappend="${p.badgeClass}" th:text="${p.badge}"></span>
+  </div>
+
+  <!-- A home page section card (accent colour comes from the block) -->
+  <section th:fragment="sectionCard(b)" class="card sec" th:style="'--f:' + ${b.color}">
+    <div class="sh"><h2 th:text="${b.section.name}">Section</h2><a th:href="@{/s/{x}(x=${b.section.slug})}">View all</a></div>
+    <th:block th:each="p : ${b.posts}"><div th:replace="~{fragments/parts :: postRow(${p})}"></div></th:block>
+  </section>
+
+  <!-- Numbered pages: Prev 1 ... 4 5 [6] 7 8 ... 20 Next -->
+  <nav th:fragment="pager(page, base)" class="pager" th:if="${page.totalPages gt 1}" aria-label="Pages"
+       th:with="pf=${page.number - 2 lt 0 ? 0 : page.number - 2}, pt=${page.number + 2 gt page.totalPages - 1 ? page.totalPages - 1 : page.number + 2}">
+    <a class="btn" th:if="${page.hasPrevious()}" th:href="${base} + 'page=' + ${page.number - 1}">&lsaquo; Prev</a>
+    <a class="pg" th:if="${pf gt 0}" th:href="${base} + 'page=0'">1</a>
+    <span class="meta" th:if="${pf gt 1}">&hellip;</span>
+    <th:block th:each="i : ${#numbers.sequence(pf, pt)}">
+      <span class="pg on" th:if="${i == page.number}" th:text="${i + 1}" aria-current="page">1</span>
+      <a class="pg" th:if="${i != page.number}" th:href="${base} + 'page=' + ${i}" th:text="${i + 1}">2</a>
+    </th:block>
+    <span class="meta" th:if="${pt lt page.totalPages - 2}">&hellip;</span>
+    <a class="pg" th:if="${pt lt page.totalPages - 1}" th:href="${base} + 'page=' + ${page.totalPages - 1}" th:text="${page.totalPages}">9</a>
+    <a class="btn" th:if="${page.hasNext()}" th:href="${base} + 'page=' + ${page.number + 1}">Next &rsaquo;</a>
+  </nav>
+
+  <!-- Trending: ranked list. Two columns on desktop, top 5 plus "Show all" on phones -->
+  <section th:fragment="trending(list)" class="card trend2" th:if="${!#lists.isEmpty(list)}">
+    <div class="th">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1 4-3 5-3 9a3 3 0 0 0 6 0c0-1.5-1-2-1-3 3 1 5 4 5 7a7 7 0 0 1-14 0c0-6 7-8 7-13z"/></svg>
+      <h2>Trending now</h2><a th:href="@{/s/jobs}">All jobs</a>
+    </div>
+    <ol class="tl2" id="h-trend">
+      <li th:each="p, i : ${list}">
+        <a th:href="@{/post/{s}(s=${p.slug})}">
+          <span class="rk2" th:classappend="${i.index lt 3} ? ('r' + ${i.count})" th:text="${i.count}">1</span>
+          <span class="tx"><b th:text="${p.title}">Title</b>
+            <small th:text="${p.views} + ' views'">0 views</small>
+            <span th:if="${!#strings.isEmpty(p.badge)}" class="pill" style="margin:0 0 0 6px" th:classappend="${p.badgeClass}" th:text="${p.badge}"></span></span>
+        </a>
+      </li>
+    </ol>
+    <button class="btn tm" type="button" id="tm" th:if="${#lists.size(list) gt 5}">Show all</button>
+  </section>
+
+  <!-- Last date within 7 days -->
+  <section th:fragment="closing(list)" class="card" th:if="${!#lists.isEmpty(list)}" style="margin-top:16px">
+    <div class="th">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#b91c1c"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <h2>Closing soon</h2><span class="meta" style="margin-left:auto">last date within 7 days</span>
+    </div>
+    <div class="strip">
+      <a class="cl" th:each="p : ${list}" th:href="@{/post/{s}(s=${p.slug})}">
+        <b th:text="${p.title}">Title</b>
+        <span class="pill mu" style="margin:6px 0 0" th:text="${p.daysLeftText}">3 days left</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Email alerts box -->
+  <section th:fragment="subscribe" id="alerts" class="card subc">
+    <h2>Get alerts by email</h2>
+    <p class="sub" th:if="${subMsg != null}" th:text="${subMsg}" role="status"></p>
+    <form th:action="@{/subscribe}" method="post" class="bar" style="margin-top:0">
+      <input type="email" name="email" placeholder="you@example.com" aria-label="Email" required style="max-width:320px;margin:0">
+      <button class="btn p" type="submit">Subscribe</button>
+    </form>
+  </section>
+</body>
+</html>

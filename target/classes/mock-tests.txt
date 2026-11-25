@@ -1,0 +1,66 @@
+# ===== MOCK TESTS =====
+# Edit this file to add or change tests. To use your own copy without rebuilding, put mock-tests.txt next to the jar.
+# A test starts with:   @test slug | Title | minutes | short description
+# Each question line:   question | option A | option B | option C | option D | correct letter (A-D) | short explanation
+# Lines starting with # are ignored. Do not use the | character inside text.
+
+
+@test mock-general-knowledge-1 | General Knowledge Mock Test 1 | 10 | India, science and general awareness basics
+Who was the first President of India? | Jawaharlal Nehru | Rajendra Prasad | S. Radhakrishnan | Sardar Patel | B | Dr. Rajendra Prasad was the first President of India (1950 to 1962).
+Which river is known as the 'Sorrow of Bihar'? | Kosi | Ganga | Son | Gandak | A | The Kosi changes its course often and causes floods in Bihar.
+What is the national animal of India? | Lion | Tiger | Elephant | Leopard | B | The Bengal tiger is the national animal of India.
+On which date did the Constitution of India come into force? | 15 August 1947 | 26 November 1949 | 26 January 1950 | 2 October 1950 | C | The Constitution came into force on 26 January 1950, celebrated as Republic Day.
+What is the capital of Uttar Pradesh? | Kanpur | Varanasi | Lucknow | Prayagraj | C | Lucknow is the capital of Uttar Pradesh.
+Which gas is the most abundant in the Earth's atmosphere? | Oxygen | Nitrogen | Carbon dioxide | Hydrogen | B | Nitrogen makes up about 78 percent of the atmosphere.
+Who wrote the national anthem 'Jana Gana Mana'? | Bankim Chandra Chatterjee | Rabindranath Tagore | Sarojini Naidu | Mahatma Gandhi | B | Rabindranath Tagore wrote Jana Gana Mana.
+Which planet is known as the Red Planet? | Venus | Jupiter | Mars | Saturn | C | Mars looks red because of iron oxide on its surface.
+Kaziranga National Park is located in which state? | Assam | Gujarat | Kerala | Odisha | A | Kaziranga is in Assam and is famous for the one-horned rhinoceros.
+How many states are there in India? | 25 | 28 | 29 | 30 | B | India has 28 states and 8 union territories.
+
+@test mock-quantitative-aptitude-1 | Quantitative Aptitude Mock Test 1 | 15 | Percentage, average, interest, LCM and HCF
+What is 15% of 200? | 20 | 25 | 30 | 35 | C | 15/100 x 200 = 30.
+What is the average of 10, 20, 30, 40 and 50? | 25 | 30 | 35 | 40 | B | Sum = 150, and 150 / 5 = 30.
+What is the simple interest on Rs 1000 at 10% per year for 2 years? | Rs 100 | Rs 150 | Rs 200 | Rs 220 | C | SI = 1000 x 10 x 2 / 100 = Rs 200.
+What is the LCM of 12 and 18? | 24 | 36 | 48 | 72 | B | 12 = 2x2x3 and 18 = 2x3x3, so LCM = 2x2x3x3 = 36.
+A train covers 120 km in 2 hours. What is its speed? | 40 km/h | 50 km/h | 60 km/h | 80 km/h | C | Speed = distance / time = 120 / 2 = 60 km/h.
+What is the square root of 144? | 10 | 11 | 12 | 14 | C | 12 x 12 = 144.
+What is 3/4 as a percentage? | 65% | 70% | 75% | 80% | C | 3/4 = 0.75 = 75%.
+What is the HCF of 24 and 36? | 6 | 8 | 12 | 18 | C | The largest number that divides both 24 and 36 is 12.
+An item bought for Rs 400 is sold for Rs 500. What is the profit percent? | 20% | 25% | 30% | 50% | B | Profit = 100, and 100 / 400 x 100 = 25%.
+What is the value of 7 x 8 + 4? | 56 | 58 | 60 | 64 | C | 7 x 8 = 56, and 56 + 4 = 60.
+
+@test mock-english-1 | English Mock Test 1 | 10 | Synonyms, antonyms, grammar and spelling
+Choose the synonym of 'Rapid'. | Quick | Slow | Late | Weak | A | Rapid means fast, so Quick is the synonym.
+Choose the antonym of 'Brave'. | Coward | Bold | Strong | Fearless | A | The opposite of brave is coward.
+She ___ to school every day. | go | goes | going | gone | B | With 'she' in simple present we use 'goes'.
+What is the plural of 'child'? | childs | children | childrens | childes | B | Child has an irregular plural: children.
+I have ___ apple. | a | an | the | no word | B | We use 'an' before a vowel sound.
+One word for 'a person who writes books': | Author | Editor | Reader | Publisher | A | A person who writes books is an author.
+Choose the correct spelling. | Recieve | Receive | Receeve | Receve | B | Remember the rule: i before e, except after c.
+What is the past tense of 'eat'? | eated | ate | eaten | eating | B | The past tense of eat is ate.
+Choose the antonym of 'Increase'. | Decrease | Expand | Grow | Raise | A | The opposite of increase is decrease.
+He is senior ___ me. | than | to | from | with | B | We say 'senior to', not 'senior than'.
+
+@test mock-reasoning-1 | Reasoning Mock Test 1 | 15 | Series, odd one out, coding and direction
+Find the next number: 2, 4, 8, 16, ? | 24 | 30 | 32 | 36 | C | Each number is doubled: 16 x 2 = 32.
+Find the odd one out: Apple, Mango, Potato, Banana | Apple | Mango | Potato | Banana | C | Potato is a vegetable and the others are fruits.
+If A = 1, B = 2, C = 3 and so on, what is the value of E? | 4 | 5 | 6 | 7 | B | E is the fifth letter, so its value is 5.
+Find the next number: 5, 10, 15, 20, ? | 22 | 24 | 25 | 30 | C | The series adds 5 each time.
+Ram is Shyam's brother. Shyam is Geeta's father. How is Ram related to Geeta? | Father | Brother | Uncle | Cousin | C | Ram is the brother of Geeta's father, so he is her uncle.
+Find the next day: Monday, Wednesday, Friday, ? | Saturday | Sunday | Monday | Tuesday | B | The series skips one day each time.
+Find the next number: 1, 4, 9, 16, ? | 20 | 24 | 25 | 36 | C | These are squares: 1, 2, 3, 4 and then 5 squared is 25.
+The day after tomorrow is Sunday. What day is today? | Thursday | Friday | Saturday | Monday | B | Day after tomorrow is Sunday, so tomorrow is Saturday and today is Friday.
+Find the odd one out: Circle, Square, Triangle, Cube | Circle | Square | Triangle | Cube | D | A cube is a 3D shape; the others are flat shapes.
+What is the opposite direction of North-East? | North-West | South-East | South-West | South | C | The opposite of North-East is South-West.
+
+@test mock-computer-basics-1 | Computer Basics Mock Test 1 | 10 | Basic computer knowledge for CCC and other exams
+What does CPU stand for? | Central Processing Unit | Computer Personal Unit | Central Program Utility | Control Processing Unit | A | CPU means Central Processing Unit, the brain of the computer.
+Which of these is an input device? | Monitor | Printer | Keyboard | Speaker | C | A keyboard sends data into the computer, so it is an input device.
+RAM is which type of memory? | Volatile | Permanent | Read only | Optical | A | RAM loses its data when the power is switched off, so it is volatile.
+Which shortcut copies the selected item in Windows? | Ctrl + V | Ctrl + C | Ctrl + X | Ctrl + Z | B | Ctrl + C copies, Ctrl + V pastes, Ctrl + X cuts and Ctrl + Z undoes.
+Which of these is an operating system? | Windows | Google Chrome | Microsoft Word | Photoshop | A | Windows is an operating system; the others are application programs.
+1 KB is equal to how many bytes? | 100 | 512 | 1024 | 2048 | C | 1 KB = 1024 bytes.
+Which key deletes the character to the left of the cursor? | Delete | Backspace | Enter | Shift | B | Backspace removes the character before the cursor.
+What is the file extension of a modern Word document? | .txt | .pdf | .docx | .xlsx | C | Microsoft Word documents use .docx.
+What is the full form of URL? | Uniform Resource Locator | Universal Resource Link | Unique Reference Location | United Resource List | A | URL means Uniform Resource Locator, the address of a web page.
+Which device is used to print on paper? | Scanner | Printer | Projector | Modem | B | A printer produces a paper copy of a document.

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, ${metaDescription})}">
+<head><title th:text="${post.title} + ' | ' + ${site.name}">Post</title></head>
+<body>
+<!--
+  ============================================================
+  POST PAGE: SIMPLE PLACEHOLDER DESIGN. Replace everything inside <main> with your final design.
+  Available data: post.title, post.organisation, post.totalPosts, post.lastDateText, post.daysLeftText, post.tags, post.summary,
+  post.body (HTML), post.fees (category, amount, note), post.extras (label, detail),
+  post.stages (name, appliesTo, whenText, state, stateClass, link), post.vacancies (postName, ur, obc, sc, st, ews, total),
+  post.badge, post.badgeClass, post.views, post.updatedOnText, post.verifiedBy, post.section.name, related (list of posts), preview (true in admin preview).
+  ============================================================
+-->
+<main class="wrap">
+  <script type="application/ld+json" th:inline="javascript" th:unless="${preview}">
+  {"@context":"https://schema.org","@type":"Article","headline":/*[[${post.title}]]*/ "","datePublished":/*[[${post.publishedIso}]]*/ "",
+   "dateModified":/*[[${post.modifiedIso}]]*/ "","mainEntityOfPage":/*[[${canonical}]]*/ "","publisher":{"@type":"Organization","name":/*[[${site.name}]]*/ ""}}
+  </script>
+  <div class="msg err" th:if="${preview}">Preview mode. Status: <b th:text="${post.status}"></b>. <a th:href="@{/admin/posts/{i}/edit(i=${post.id})}">Back to editor</a></div>
+  <th:block th:if="${post.section != null}"><div th:replace="~{fragments/parts :: crumbs(${post.section.name}, '/s/' + ${post.section.slug}, ${post.title})}"></div></th:block>
+  <h1 th:text="${post.title}">Title</h1>
+  <p class="meta"><span th:text="${post.updatedOnText}"></span> · <span th:text="${post.views} + ' views'"></span>
+    <span th:if="${!#strings.isEmpty(post.organisation)}" th:text="' · ' + ${post.organisation}"></span></p>
+
+  <div class="banner" th:if="${!#strings.isEmpty(post.badge)}">
+    <span th:text="'Now: ' + ${post.badge}">Status</span>
+    <span class="pill mu" th:if="${post.daysLeft ge 0 and post.daysLeft le 14}" th:text="${post.daysLeftText}">3 days left</span>
+  </div>
+  <div class="bar" style="margin-top:12px">
+    <button class="btn" type="button" th:attr="data-save=${post.slug},data-title=${post.title}">Save</button>
+    <button class="btn" type="button" data-copy>Copy link</button>
+    <button class="btn" type="button" data-print>Print</button>
+    <a class="btn" rel="noopener" th:href="'https://wa.me/?text=' + ${#uris.escapeQueryParam(post.title + ' ' + canonical)}">WhatsApp</a>
+    <a class="btn" rel="noopener" th:href="'https://t.me/share/url?url=' + ${#uris.escapeQueryParam(canonical)} + '&text=' + ${#uris.escapeQueryParam(post.title)}">Telegram</a>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Important details</h2>
+      <div class="st" th:if="${!#strings.isEmpty(post.organisation)}"><span>Organisation</span><span th:text="${post.organisation}"></span></div>
+      <div class="st" th:if="${!#strings.isEmpty(post.totalPosts)}"><span>Total posts</span><span th:text="${post.totalPosts}"></span></div>
+      <div class="st" th:if="${post.lastDate != null}"><span>Last date</span><span th:text="${post.lastDateText}"></span></div>
+      <div class="st" th:each="x : ${post.extras}"><span th:text="${x.label}"></span><span th:text="${x.detail}"></span></div>
+    </section>
+    <section class="card" th:if="${!#lists.isEmpty(post.stages)}">
+      <h2>Stages</h2>
+      <ol class="tline">
+        <li th:each="s : ${post.stages}" th:classappend="${s.state}">
+          <span class="dot"></span>
+          <div><b th:text="${s.name}"></b> <small th:if="${s.appliesTo != 'All posts'}" th:text="'(' + ${s.appliesTo} + ')'"></small>
+            <div class="meta"><span th:text="${s.whenText}"></span> <a th:if="${!#strings.isEmpty(s.link)}" th:href="${s.link}" rel="noopener nofollow" target="_blank">Open link</a></div></div>
+          <span class="pill" th:classappend="${s.stateClass}" th:text="${s.state}"></span>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <section class="card" th:if="${!#lists.isEmpty(post.fees)}">
+    <h2>Application fee</h2>
+    <div class="scroll"><table style="min-width:0">
+      <tr th:each="f : ${post.fees}"><td th:text="${f.category}"></td><td><b th:text="'₹' + ${f.amount}"></b></td><td class="meta" th:text="${f.note}"></td></tr>
+    </table></div>
+  </section>
+
+  <section class="card" th:if="${!#lists.isEmpty(post.vacancies)}">
+    <h2>Vacancy details</h2>
+    <div class="scroll"><table>
+      <tr><th>Post</th><th>UR</th><th>OBC</th><th>SC</th><th>ST</th><th>EWS</th><th>Total</th></tr>
+      <tr th:each="v : ${post.vacancies}"><td th:text="${v.postName}"></td><td th:text="${v.ur}"></td><td th:text="${v.obc}"></td><td th:text="${v.sc}"></td><td th:text="${v.st}"></td><td th:text="${v.ews}"></td><td><b th:text="${v.total}"></b></td></tr>
+    </table></div>
+  </section>
+
+  <section class="card prose" th:if="${!#strings.isEmpty(post.body)}" th:utext="${post.body}">Body</section>
+
+  <p class="meta" th:if="${post.verifiedBy != null}" th:text="'Verified by ' + ${post.verifiedBy} + '. Always confirm details on the official website.'"></p>
+  <div class="card disc" th:if="${!#strings.isEmpty(site.disclaimerNote)}"><p th:text="${site.disclaimerNote}"></p></div>
+
+  <section class="card" th:if="${!#lists.isEmpty(related)}">
+    <h2>Related posts</h2>
+    <th:block th:each="p : ${related}"><div th:replace="~{fragments/parts :: postRow(${p})}"></div></th:block>
+  </section>
+</main>
+</body>
+</html>

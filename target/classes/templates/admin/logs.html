@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/fragments :: layout(~{::title}, ~{::main})}">
+<head><title>Page hits and logs | Admin</title></head>
+<body>
+<main>
+  <h1>Page hits and logs</h1>
+  <p class="sub">Counted since the app started (<span th:text="${since}">time</span>). Every request is also written to <b>logs/sarkari.log</b>. Counters reset when you restart.</p>
+  <div class="stats">
+    <div><b th:text="${total}">0</b><span>Requests</span></div>
+    <div><b th:text="${#lists.size(rows)}">0</b><span>Known pages (routes)</span></div>
+    <div><b th:text="${never}">0</b><span>Never called</span></div>
+    <div><b th:text="${#lists.size(missing)}">0</b><span>Missing pages (404)</span></div>
+  </div>
+  <section class="card"><h2>All pages and how often they were called</h2>
+    <div class="scroll"><table>
+      <tr><th>Method</th><th>Page pattern</th><th>Hits</th><th>Errors</th><th>Avg ms</th><th>Last status</th><th>Last called</th></tr>
+      <tr th:each="r : ${rows}">
+        <td th:text="${r.method}">GET</td><td><code th:text="${r.pattern}">/</code></td>
+        <td><b th:text="${r.hits}">0</b> <span class="pill mu" th:if="${r.hits == 0}">Never called</span></td>
+        <td th:text="${r.errors}">0</td><td th:text="${r.avgMs}">0</td><td th:text="${r.hits == 0} ? '-' : ${r.status}">200</td><td th:text="${r.last}">never</td>
+      </tr>
+    </table></div>
+  </section>
+  <section class="card"><h2>Pages people asked for that do not exist (404)</h2>
+    <p class="sub" th:if="${#lists.isEmpty(missing)}">None so far.</p>
+    <div class="scroll" th:if="${!#lists.isEmpty(missing)}"><table>
+      <tr><th>Path</th><th>Hits</th><th>Last</th></tr>
+      <tr th:each="r : ${missing}"><td><code th:text="${r.pattern}">/x</code></td><td th:text="${r.hits}">1</td><td th:text="${r.last}">time</td></tr>
+    </table></div>
+  </section>
+  <section class="card"><h2>Last 100 requests (newest first)</h2>
+    <pre style="margin:0;white-space:pre-wrap;font-size:12px;line-height:1.6"><th:block th:each="l : ${recent}" th:text="${l} + '&#10;'"></th:block></pre>
+  </section>
+</main>
+</body>
+</html>
